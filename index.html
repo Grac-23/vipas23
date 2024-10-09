@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changing Background with Text</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <link rel="stylesheet" href="index.css" />
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+   integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+   integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+   crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+   integrity="sha384-9/reFTGAW83EW2R   Du2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+   crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+   integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+   crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+   
+
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light  fixed-top">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav ml-auto">
+                <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </div>
+            </div>
+          </nav>
+    </div>
+
+    <!-- animated hero page -->
+    <div class="bg-container" id="background">
+        <div class="overlay"></div>
+        <div class="text-overlay" id="text-overlay">
+            <h1 style="font-family:Georgia, 'Times New Roman', Times, serif;">Your Health, Our Priority.</h1>
+            <p>Emphasizes the hospital's commitment to patient well-being and care.</p>
+        </div>
+    </div>
+     <!-- animated hero page -->
+
+    <h1> NC</h1>
+    <h1> NC</h1>
+
+    <h1> NC</h1>
+
+    <h1> NC</h1>
+    <h1> NC</h1>
+    <h1> NC</h1>
+
+    <h1> NC</h1>
+
+    <h1> NC</h1>
+    <h1> NC</h1>
+    <h1> NC</h1>
+
+    <h1> NC</h1>
+
+    <h1> NC</h1>
+<!-- animated hero page script -->
+    <script>
+        const backgrounds = [
+            {
+                image: 'https://img.freepik.com/free-photo/doctor-from-future-concept_23-2151111183.jpg?t=st=1724142954~exp=1724146554~hmac=46de2f4f443ec878ef4fafc75f962b98e8169ea7d974789b8cb1b70678f281ce&w=1060',
+                title: 'Where Healing Begins',
+                text: 'Suggests that the hospital is a place of recovery and hope..'
+            },
+            {
+                image: 'https://img.freepik.com/free-photo/doctor-from-future-concept_23-2151111161.jpg?t=st=1724143114~exp=1724146714~hmac=9f9dfbcef03f2a9b15e02e4c6dceb48f0a3c52fb12729decc840a4456501fc73&w=1060',
+                title: 'Expert Care, Close to Home',
+                text: 'We provide a wide range of services to meet your needs.'
+            },
+            {
+                image: 'https://img.freepik.com/free-photo/doctor-from-future-concept_23-2151111188.jpg?t=st=1724143185~exp=1724146785~hmac=e7151dc847a603caf1c9ac19167c8c8b8585dd0971cc7fae49ca200a0e18e451&w=1060',
+                title: 'Your Partner in Health',
+                text: 'Positions the hospital as a supportive and reliable healthcare provider..'
+            },
+            {
+                image: 'https://img.freepik.com/premium-photo/woman-blue-uniform-holds-tablet-with-words-medical-it_979520-114995.jpg?w=1060',
+                title: 'Healing Hands, Caring Hearts',
+                text: 'Conveys the message of compassionate care provided by skilled professionals..'
+            }
+        ];
+
+        let currentIndex = 0;
+        const backgroundEl = document.getElementById('background');
+        const textOverlayEl = document.getElementById('text-overlay');
+
+        function changeBackground() {
+            currentIndex = (currentIndex + 1) % backgrounds.length;
+            const currentBackground = backgrounds[currentIndex];
+
+            backgroundEl.style.backgroundImage = `url(${currentBackground.image})`;
+            textOverlayEl.innerHTML = `<h1>${currentBackground.title}</h1><p>${currentBackground.text}</p>`;
+        }
+
+        setInterval(changeBackground, 4000); // Change every 5 seconds
+    </script>
+<!-- Animated Navbar Script -->
+<script>
+    window.addEventListener('scroll', function() {
+        var navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+</script>
+</body>
+
+</html>
